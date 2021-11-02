@@ -67,12 +67,10 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for (var i = 0; i < array.length; i++){
-    if (array[i] === elemento) {
+      if (array.includes(elemento)) {
       return true
     }
-  }
-  return false
+    return false 
 }
 
 
@@ -81,10 +79,11 @@ function agregarNumeros(numeros) {
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   //[2, 3, 6, 8, 10] 0+1+2+3+4+5
-  for (var i = 1; i < numeros.length; i++){
-    var suma = numeros[i]
+  var contador = 0
+  for (var i = 0; i < numeros.length; i++){
+    contador = contador + numeros[i]
     }
-    return suma
+    return contador
 }
 
 
@@ -92,7 +91,9 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  
+  var suma = agregarNumeros(resultadosTest)
+  var promedio = suma / resultadosTest.length
+  return promedio;
 }
 
 
@@ -201,7 +202,13 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  
+  var mayores = []
+  for (var i = 0; i < array.length; i++){
+    if (array[i] > 100){
+      mayores.push (array[i])
+    }
+  }
+  return mayores
 }
 
 
